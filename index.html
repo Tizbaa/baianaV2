@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Baïana Fruitz — Le goût du soleil, en canette</title>
+<meta name="description" content="Baïana Fruitz — boissons aux fruits tropicaux. Mangue, Passion, Tropical, Litchi, Coco. Sans conservateurs, 100% goût, origine tropicale.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baiana-fruitz.com/">
+<meta property="og:title" content="Baïana Fruitz — Le goût du soleil, en canette">
+<meta property="og:description" content="Boissons aux fruits tropicaux premium. Mangue, Passion, Tropical, Litchi, Coco. Sans conservateurs, 50% de jus de fruits.">
+<meta property="og:image" content="assets/hero.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://baiana-fruitz.com/">
+<meta property="twitter:title" content="Baïana Fruitz — Le goût du soleil, en canette">
+<meta property="twitter:description" content="Boissons aux fruits tropicaux premium. Mangue, Passion, Tropical, Litchi, Coco. Sans conservateurs, 50% de jus de fruits.">
+<meta property="twitter:image" content="assets/hero.jpg">
+
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700,900&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mangue:#F58A00;   --mangue-deep:#8F3A06;
+  --coco:#F5EFE6;     --coco-deep:#E5E1DA;
+  --passion:#6A1F8C;  --passion-deep:#2E0C46;
+  --tropical:#009BFF; --tropical-deep:#0067B0;
+  --litchi:#CE0E2D;   --litchi-deep:#5E000C;
+  --sand:#EAE2D5; --ink:#0E252C; --jungle:#E1EBF0; --silver:#DCDCE0;
+  --display:"Boska",Georgia,serif; --body:"Satoshi",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{}
+body{font-family:var(--body);background:var(--sand);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border-radius: 5px;
+  border: 2px solid var(--sand);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1C3F49;
+}
+
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--sand);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.preloader-content {
+  text-align: center;
+  width: 320px;
+}
+.preloader-logo-wrap img {
+  height: 180px;
+  width: auto;
+  display: block;
+  margin: 0 auto 24px auto;
+  animation: preloaderPulse 1.5s ease-in-out infinite;
+}
+.preloader-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(14, 37, 44, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.preloader-progress {
+  width: 0%;
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.4s ease-out;
+}
+@keyframes preloaderPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.disp{font-family:var(--display)}
+.eyebrow{font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:clamp(11px,1.1vw,13px)}
+.mask{overflow:hidden;display:block}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(20px,4vw,52px);transition:background .4s ease,padding .4s ease,box-shadow 0.3s ease;mix-blend-mode:normal}
+.nav.solid{background:rgba(234,226,213,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 30px rgba(14,37,44,0.05);padding-top:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.4)}
+.nav .logo{display:flex;align-items:center;gap:11px}
+.nav .logo img{height:72px;width:auto;display:block;transition:height 0.3s ease}
+.nav.solid .logo img{height:48px}
+.nav .links{display:flex;gap:30px;align-items:center}
+.nav .links a{color:#fff;font-weight:600;font-size:14px;letter-spacing:.02em;opacity:.85;transition:color 0.3s ease, opacity 0.25s}
+.nav .links a:hover{opacity:1}
+.nav.solid .links a{color:var(--ink);opacity:.8}
+.nav.solid .links a:hover{opacity:1}
+.nav .links .btn-b2b{border:1px solid rgba(255,255,255,0.4);padding:8px 18px;border-radius:99px;font-weight:700;transition:all 0.3s ease}
+.nav .links .btn-b2b:hover{background:#fff;color:var(--ink);border-color:#fff}
+.nav.solid .links .btn-b2b{border-color:var(--ink);color:var(--ink)}
+.nav.solid .links .btn-b2b:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media(max-width:680px){.nav .links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#fff}
+.hero-bg{position:absolute;top:-4%;left:0;width:100%;height:108%;object-fit:cover;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(70% 50% at 50% 30%,rgba(255,196,92,.28),transparent 62%),
+  linear-gradient(180deg,rgba(10,34,40,.45) 0%,transparent 20%,transparent 40%,rgba(10,34,40,.72) 74%,rgba(5,19,23,.94) 100%)}
+.hero-inner{position:relative;z-index:3;padding:0 24px clamp(86px,14vh,150px);transform:translateZ(0)}
+.hero-eyebrow{opacity:.92;margin-bottom:clamp(14px,2vw,22px);text-shadow:0 2px 18px rgba(0,0,0,.4)}
+.hero-title{
+  font-family:var(--display);
+  font-weight:900;
+  font-size:clamp(62px,19vw,300px);
+  line-height:.82;
+  letter-spacing:-.03em;
+  filter: drop-shadow(0 15px 35px rgba(10,34,40,0.55));
+}
+.hero-title .ln{
+  display:block;
+  background: linear-gradient(120deg, #FFFFFF 15%, #FFEBD0 45%, #FFAE99 75%, #FFFFFF 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGradient 8s ease infinite;
+}
+@keyframes shimmerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-sub{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(19px,3.4vw,40px);margin-top:clamp(12px,2vw,26px);
+  opacity:.96;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:9px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;opacity:.8}
+.scrollcue .bar{width:1px;height:46px;background:linear-gradient(#fff,transparent);position:relative;overflow:hidden}
+.scrollcue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:#fff;animation:cue 1.9s ease-in-out infinite}
+@keyframes cue{0%{top:-50%}60%,100%{top:100%}}
+/* mobile hero: portrait render fills via cover; stronger base for title legibility */
+@media(max-width:680px){
+  .hero::before{background:radial-gradient(72% 42% at 50% 22%,rgba(255,196,92,.20),transparent 60%),
+    linear-gradient(180deg,rgba(10,34,40,.34) 0%,transparent 24%,transparent 50%,rgba(10,34,40,.66) 76%,rgba(5,19,23,.95) 100%)}
+  .hero-inner{padding-bottom:12vh}
+}
+
+/* light motes */
+.mote{position:absolute;z-index:2;border-radius:50%;background:radial-gradient(circle,rgba(160,230,255,.9),rgba(160,230,255,0) 70%);pointer-events:none;will-change:transform,opacity}
+
+/* grain */
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- MANIFESTO BAND ---------- */
+.manifesto{background:var(--sand);color:var(--ink);padding:clamp(100px,15vh,180px) clamp(24px,6vw,80px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;max-width:1400px;margin:0 auto}
+.mani-title{font-family:var(--display);font-size:clamp(44px,6.2vw,88px);font-weight:900;line-height:1;letter-spacing:-.02em;text-align:left;color:#00D0F5;margin:0}
+.mani-desc{font-family:var(--body);font-weight:400;font-size:clamp(18px,2.2vw,28px);line-height:1.5;color:var(--ink);text-align:left;margin:0}
+.mani-desc em{font-style:italic;font-weight:700;color:var(--litchi)}
+@media(max-width:820px){
+  .manifesto{grid-template-columns:1fr;gap:40px;padding:80px 24px}
+  .mani-title{text-align:center}
+  .mani-desc{text-align:center}
+}
+
+/* ---------- FLAVORS (Interactive Viewport Accordion) ---------- */
+.flavors{position:relative;background:var(--ink);width:100vw;height:100vh;overflow:hidden;margin:0;padding:0}
+.flavors-grid{display:flex;width:100%;height:100%;gap:0;margin:0;padding:0;list-style:none}
+.flavor-card{
+  flex:1;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+  transition:flex 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  color:#fff;
+  padding:40px;
+}
+.flavor-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(14,37,44,0.85); /* dark overlay */
+  z-index:1;
+  transition:opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media(min-width:768px){
+  .flavor-card:hover::before{
+    opacity:0;
+  }
+  .flavor-card:hover{
+    flex:15;
+  }
+
+  /* Fade out other cans when one is hovered */
+  .flavors-grid:hover .flavor-card:not(:hover) .can-img {
+    opacity:0;
+    transform:scale(0.85) rotate(0deg);
+  }
+}
+
+/* Vertical title when collapsed */
+.flavor-card .card-vertical-title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) rotate(-90deg);
+  font-family:var(--display);
+  font-size:clamp(20px, 2.2vw, 32px);
+  font-weight:900;
+  letter-spacing:0.15em;
+  opacity:0.75;
+  z-index:2;
+  pointer-events:none;
+  transition:opacity 0.6s ease;
+  white-space:nowrap;
+}
+@media(min-width:768px){
+  .flavor-card:hover .card-vertical-title{
+    opacity:0;
+  }
+}
+
+/* Visual container */
+.flavor-card .card-visual{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  height:100%;
+  perspective:1000px;
+}
+.flavor-card .card-visual .num{
+  font-family:var(--body);
+  font-size:16px;
+  font-weight:700;
+  opacity:0.4;
+  letter-spacing:0.1em;
+  margin-bottom:20px;
+}
+.flavor-card .card-visual .can-img{
+  height:clamp(340px, 65vh, 580px);
+  width:auto;
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+  transition:transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease, filter 1.8s;
+}
+@media(min-width:768px){
+  .flavor-card:hover .card-visual .can-img{
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,0.35));
+  }
+}
+
+/* Content container */
+.flavor-card .card-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:0;
+  opacity:0;
+  visibility:hidden;
+  z-index:2;
+  padding-left:0;
+  transition:width 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.4s ease, padding-left 1.8s;
+  overflow:hidden;
+}
+@media(min-width:768px){
+  .flavor-card:hover .card-content{
+    width:50%;
+    opacity:1;
+    visibility:visible;
+    padding-left:clamp(30px, 5vw, 70px);
+  }
+}
+.flavor-card .card-content-inner{
+  width:clamp(360px, 38vw, 500px);
+  flex-shrink:0;
+}
+/* Special color and overlay rules for Coco card to ensure high contrast and a clean white background in all states */
+.flavor-card[style*="--accent: var(--coco)"]::before {
+  opacity: 0 !important;
+}
+.flavor-card[style*="--accent: var(--coco)"] {
+  color: var(--ink) !important;
+}
+.flavor-card[style*="--accent: var(--coco)"] .card-vertical-title {
+  color: var(--ink) !important;
+  opacity: 0.65;
+}
+@media(min-width:768px){
+  .flavor-card[style*="--accent: var(--coco)"]:hover .card-vertical-title,
+  .flavor-card[style*="--accent: var(--coco)"].locked .card-vertical-title {
+    opacity: 0 !important;
+  }
+}
+.flavor-card[style*="--accent: var(--coco)"] .num {
+  color: var(--ink) !important;
+  opacity: 0.6;
+}
+.flavor-card[style*="--accent: var(--coco)"] .card-content .specs span {
+  border-color: rgba(14, 37, 44, 0.3) !important;
+  background: rgba(14, 37, 44, 0.05) !important;
+}
+.flavor-card[style*="--accent: var(--coco)"] .card-content .recipe span {
+  background: rgba(14, 37, 44, 0.05) !important;
+}
+.flavor-card[style*="--accent: var(--coco)"] .card-watermark {
+  color: var(--ink) !important;
+  opacity: 0.05;
+}
+
+/* Watermark & particles styling */
+.flavor-card .card-watermark {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--display);
+  font-size: clamp(60px, 9vw, 150px);
+  font-weight: 900;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: 0.02em;
+  transition: opacity 1.8s ease, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.flavor-card:hover .card-watermark, .flavor-card.locked .card-watermark {
+  opacity: 0.04;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+
+
+.flavor-card .card-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+.flavor-card:hover .card-particles, .flavor-card.locked .card-particles {
+  opacity: 0.25;
+}
+.flavor-card .particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+.flavor-card[style*="--accent: var(--coco)"] .particle {
+  background: rgba(14, 37, 44, 0.2);
+}
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-20px) translateX(10px) rotate(15deg); }
+}
+
+/* Recipe composition layout */
+.flavor-card .card-content .recipe {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.flavor-card .card-content .recipe span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+}
+
+@media(min-width:768px){
+  /* Locked card desktop layout override */
+  .flavor-card.locked {
+    flex: 15 !important;
+  }
+  .flavor-card.locked::before {
+    opacity: 0 !important;
+  }
+  .flavor-card.locked .card-vertical-title {
+    opacity: 0 !important;
+  }
+  .flavor-card.locked .card-content {
+    width: 50% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding-left: clamp(30px, 5vw, 70px) !important;
+  }
+  .flavor-card.locked .card-visual .can-img {
+    transform: scale(1.15) rotate(4deg) !important;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.35)) !important;
+  }
+  .flavors-grid:has(.locked) .flavor-card:not(.locked) .can-img {
+    opacity: 0 !important;
+    transform: scale(0.85) rotate(0deg) !important;
+  }
+}
+.flavor-card .card-content .name{
+  font-family:var(--display);
+  font-size:clamp(38px, 4.5vw, 68px);
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:18px;
+  letter-spacing:-.02em;
+}
+.flavor-card .card-content .desc{
+  font-size:clamp(14px, 1.1vw, 17px);
+  line-height:1.6;
+  opacity:0.85;
+  margin-bottom:30px;
+  max-width:480px;
+}
+.flavor-card .card-content .specs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.flavor-card .card-content .specs span{
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:99px;
+  padding:10px 20px;
+  font-size:clamp(12px, 0.9vw, 14px);
+  font-weight:700;
+  background:rgba(255,255,255,0.1);
+  letter-spacing:0.02em;
+}
+
+@media(max-width:767px){
+  .flavors{height:auto;overflow:visible}
+  .flavors-grid{flex-direction:column;height:auto}
+  .flavor-card{
+    height:auto;
+    min-height:360px;
+    flex:none;
+    flex-direction:column;
+    padding:48px 24px;
+    justify-content:center;
+  }
+  .flavor-card::before{display:none}
+  .flavor-card .card-vertical-title{display:none}
+  .flavor-card .card-visual .can-img{height:200px}
+  .flavor-card .card-content{
+    width:100%;
+    opacity:1;
+    visibility:visible;
+    padding-left:0;
+    margin-top:24px;
+    text-align:center;
+    align-items:center;
+  }
+  .flavor-card .card-content .desc{max-width:100%}
+  .flavor-card .card-content .specs{justify-content:center}
+  .flavor-card .card-content-inner{width:100%}
+  .flavor-card .card-content .recipe{justify-content:center;margin-bottom:20px}
+}
+
+
+
+/* ---------- PROMESSE ---------- */
+.promesse{background:var(--sand);color:var(--ink);text-align:center;padding:clamp(100px,18vh,200px) clamp(24px,6vw,40px);position:relative;overflow:hidden}
+.promesse .eyebrow{opacity:.6;color:var(--tropical);margin-bottom:30px}
+.promesse h2{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,84px);line-height:1.04;letter-spacing:-.01em;max-width:16ch;margin:0 auto}
+.promesse h2 .ln{display:block}
+.promesse h2 em{font-style:italic;font-weight:500;color:var(--tropical)}
+.promesse .pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:clamp(40px,6vw,64px)}
+.promesse .pills span{border:1px solid rgba(15,37,44,.12);background:rgba(255,255,255,0.7);border-radius:99px;padding:13px 26px;font-weight:600;font-size:clamp(13px,1.4vw,16px);letter-spacing:.02em}
+.promesse .pills b{color:var(--tropical);font-weight:700}
+
+/* ---------- ESPRIT (editorial asymmetric) ---------- */
+.esprit{background:var(--sand);padding:clamp(80px,14vh,160px) clamp(24px,5vw,80px);max-width:1340px;margin:0 auto}
+.esprit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
+.esprit-figs{position:relative}
+.esprit-figs figure{border-radius:18px;overflow:hidden;box-shadow:0 40px 70px -34px rgba(0,0,0,.25)}
+.esprit-figs .f1{width:75%;max-width:440px;margin:0 auto;aspect-ratio:941/1672;display:block}
+.esprit-figs figure img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.esprit-copy .eyebrow{color:var(--litchi);margin-bottom:22px}
+.esprit-copy h2{
+  font-family:var(--display);
+  font-weight:900;
+  font-size:clamp(40px,5.6vw,84px);
+  line-height:.96;
+  letter-spacing:-.02em;
+  margin-bottom:26px;
+  background: linear-gradient(120deg, #0E252C 15%, #FFEBD0 45%, #FFAE99 75%, #0E252C 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGradient 8s ease infinite;
+}
+.esprit-copy h2 em{font-style:italic;font-weight:500}
+.esprit-copy p{font-size:clamp(16px,1.7vw,20px);line-height:1.6;max-width:42ch;opacity:.82}
+.esprit-copy p+p{margin-top:18px}
+@media(max-width:820px){
+  .esprit-grid{grid-template-columns:1fr;gap:48px}
+  .esprit-figs{order:-1}
+}
+
+/* ---------- FOOTER ---------- */
+.foot{background:linear-gradient(180deg, var(--sand) 0%, #FF8E7A 100%);color:var(--ink);padding:clamp(60px,8vw,90px) clamp(24px,6vw,60px) 40px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;
+  border-bottom:1px solid rgba(14,37,44,.12);padding-bottom:40px}
+.foot .logo{display:flex;align-items:center;gap:14px}
+.foot .logo img{height:140px;width:auto;display:block}
+.foot .tagline{font-family:var(--display);font-style:italic;font-size:clamp(18px,2.4vw,28px);opacity:.85;max-width:14ch;text-align:right}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:13px;opacity:.7}
+.foot-bottom nav{display:flex;gap:26px}
+.foot-bottom nav a{opacity:.75;transition:opacity .25s}
+.foot-bottom nav a:hover{opacity:1;text-decoration:underline}
+@media(max-width:680px){.foot .tagline{text-align:left}.foot-top{align-items:flex-start}}
+
+[data-reveal]{will-change:transform,opacity}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+@keyframes frisson {
+  0%, 80%, 100% { transform: translate(0, 0) scale(1) skew(0deg); }
+  82% { transform: translate(-0.8px, 0.8px) scale(1.01) skew(0.5deg); }
+  84% { transform: translate(1.2px, -0.8px) scale(1.01) skew(-1deg); }
+  86% { transform: translate(-1.2px, 0.4px) scale(1.01) skew(1deg); }
+  88% { transform: translate(0.8px, 1.2px) scale(1.01) skew(-0.8deg); }
+  90% { transform: translate(-0.8px, -1.2px) scale(1.01) skew(0.8deg); }
+  92% { transform: translate(1.2px, 0.8px) scale(1.01) skew(-1deg); }
+  94% { transform: translate(-0.8px, -0.4px) scale(1.01) skew(0.8deg); }
+  96% { transform: translate(0.4px, 0.8px) scale(1.005) skew(-0.4deg); }
+  98% { transform: translate(-0.4px, -0.4px) scale(1.005) skew(0.4deg); }
+}
+.frisson {
+  display: inline-block;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--tropical);
+  animation: frisson 3.5s ease-in-out infinite;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+.frisson:hover {
+  color: var(--litchi);
+  animation: frisson 0.3s linear infinite;
+}
+.foot-right {
+  text-align: right;
+}
+@media(max-width:680px) {
+  .foot-right {
+    text-align: left !important;
+  }
+}
+
+/* ---- FAQ Section ---- */
+.faq {
+  padding: clamp(60px, 9vw, 120px) 24px;
+  background: var(--sand);
+  display: flex;
+  justify-content: center;
+}
+.faq-container {
+  max-width: 800px;
+  width: 100%;
+}
+.faq h2 {
+  font-family: var(--display);
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(14, 37, 44, 0.15);
+}
+.faq-item {
+  border-bottom: 1px solid rgba(14, 37, 44, 0.15);
+}
+.faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--body);
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  color: var(--ink);
+  transition: opacity 0.2s;
+}
+.faq-trigger:hover {
+  opacity: 0.7;
+}
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--ink);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+.faq-content {
+  height: 0;
+  overflow: hidden;
+  will-change: height;
+}
+.faq-content p {
+  padding-bottom: 24px;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+  opacity: 0.8;
+  color: var(--ink);
+}
+.faq-item.active .faq-icon {
+  transform: rotate(135deg);
+}
+</style>
+</head>
+<body>
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo-wrap">
+      <img src="Logo BLEU.png" alt="Baïana Fruitz">
+    </div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Baïana Fruitz" id="navLogo"><img src="Logo BLEU.png" alt="Baïana Fruitz"></a>
+  <nav class="links" style="align-items: center;">
+    <a href="#flavors">Saveurs</a>
+    <a href="#promesse">Notre promesse</a>
+    <a href="#esprit">L'esprit</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:commercial@procom-international.fr" class="btn-b2b" id="b2bLink" style="margin-left: 10px;">Nous Contacter</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <picture>
+    <source media="(max-width:680px)" srcset="assets/hero-mobile.jpg">
+    <img class="hero-bg" src="assets/hero.jpg" alt="Les cinq canettes Baïana Fruitz" fetchpriority="high">
+  </picture>
+  <div class="hero-inner">
+    <h1 class="hero-title"><span class="mask"><span class="ln">Baïana</span></span></h1>
+  </div>
+</section>
+
+
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="mani-left">
+    <h2 class="mani-title">Fruïssonnez<br>de plaisir</h2>
+  </div>
+  <div class="mani-right">
+    <p class="mani-desc">Cinq fruits, cueillis sous les tropiques. <em>Rien d'autre</em> — pas de conservateurs, juste l'éclat du fruit.</p>
+  </div>
+</section>
+
+<!-- FLAVORS -->
+<section class="flavors" id="flavors">
+  <div class="flavors-grid">
+    <!-- Card 1: Mangue -->
+    <div class="flavor-card" style="--accent: var(--mangue); --accent-deep: var(--mangue-deep);">
+      <div class="card-vertical-title">MANGUE</div>
+      <div class="card-watermark">MANGUE</div>
+
+      <div class="card-particles">
+        <span class="particle" style="width:8px; height:8px; left:20%; top:30%; animation-delay:0s;"></span>
+        <span class="particle" style="width:12px; height:12px; left:70%; top:60%; animation-delay:-2s;"></span>
+        <span class="particle" style="width:6px; height:6px; left:80%; top:20%; animation-delay:-4s;"></span>
+      </div>
+      <div class="card-visual">
+        <span class="num">01</span>
+        <img src="test2.png" alt="Canette Baïana Mangue" class="can-img">
+      </div>
+      <div class="card-content">
+        <div class="card-content-inner">
+          <h3 class="name">Mangue</h3>
+          <p class="desc">La douceur charnue et solaire de la mangue mûre, une texture veloutée et un parfum exotique intense. Cueillie à parfaite maturité, notre mangue délivre un nectar riche et savoureux pour un instant de pure évasion.</p>
+          <div class="recipe">
+            <span>🥭 50% Mangue</span>
+          </div>
+          <div class="specs">
+            <span><b>33cl</b></span>
+            <span><b>Sans</b> conservateurs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 2: Passion -->
+    <div class="flavor-card" style="--accent: var(--passion); --accent-deep: var(--passion-deep);">
+      <div class="card-vertical-title">PASSION</div>
+      <div class="card-watermark">PASSION</div>
+
+      <div class="card-particles">
+        <span class="particle" style="width:10px; height:10px; left:15%; top:40%; animation-delay:-1s;"></span>
+        <span class="particle" style="width:6px; height:6px; left:75%; top:30%; animation-delay:-3s;"></span>
+        <span class="particle" style="width:14px; height:14px; left:60%; top:70%; animation-delay:-5s;"></span>
+      </div>
+      <div class="card-visual">
+        <span class="num">02</span>
+        <img src="test3.png" alt="Canette Baïana Passion" class="can-img">
+      </div>
+      <div class="card-content">
+        <div class="card-content-inner">
+          <h3 class="name">Passion</h3>
+          <p class="desc">L'acidité vibrante et le parfum envoûtant du fruit de la passion pour un frisson tropical désaltérant. La Maracuja déploie en bouche une attaque vive et désaltérante qui réveille vos sens instantanément.</p>
+          <div class="recipe">
+            <span>🌸 50% Passion</span>
+          </div>
+          <div class="specs">
+            <span><b>33cl</b></span>
+            <span><b>Sans</b> conservateurs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 3: Tropical -->
+    <div class="flavor-card" style="--accent: var(--tropical); --accent-deep: var(--tropical-deep);">
+      <div class="card-vertical-title">TROPICAL</div>
+      <div class="card-watermark">TROPICAL</div>
+
+      <div class="card-particles">
+        <span class="particle" style="width:8px; height:8px; left:30%; top:20%; animation-delay:-2s;"></span>
+        <span class="particle" style="width:10px; height:10px; left:80%; top:50%; animation-delay:-4s;"></span>
+        <span class="particle" style="width:12px; height:12px; left:25%; top:80%; animation-delay:-6s;"></span>
+      </div>
+      <div class="card-visual">
+        <span class="num">03</span>
+        <img src="test4.png" alt="Canette Baïana Tropical" class="can-img">
+      </div>
+      <div class="card-content">
+        <div class="card-content-inner">
+          <h3 class="name">Tropical</h3>
+          <p class="desc">Le mariage parfait de fruits exotiques gorgés de soleil, un nectar d'évasion frais et équilibré. Une explosion de saveurs fruitées et ensoleillées où l'ananas, la mangue et l'orange s'unissent pour une fraîcheur intense.</p>
+          <div class="recipe">
+            <span>🍍 20% Ananas</span>
+            <span>🥭 15% Mangue</span>
+            <span>🍊 15% Orange</span>
+          </div>
+          <div class="specs">
+            <span><b>33cl</b></span>
+            <span><b>Sans</b> conservateurs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 4: Litchi -->
+    <div class="flavor-card" style="--accent: var(--litchi); --accent-deep: var(--litchi-deep);">
+      <div class="card-vertical-title">LITCHI</div>
+      <div class="card-watermark">LITCHI</div>
+
+      <div class="card-particles">
+        <span class="particle" style="width:6px; height:6px; left:40%; top:15%; animation-delay:-0.5s;"></span>
+        <span class="particle" style="width:12px; height:12px; left:70%; top:80%; animation-delay:-2.5s;"></span>
+        <span class="particle" style="width:8px; height:8px; left:85%; top:45%; animation-delay:-4.5s;"></span>
+      </div>
+      <div class="card-visual">
+        <span class="num">04</span>
+        <img src="test.png" alt="Canette Baïana Litchi" class="can-img">
+      </div>
+      <div class="card-content">
+        <div class="card-content-inner">
+          <h3 class="name">Litchi</h3>
+          <p class="desc">La délicatesse florale et la douceur sucrée du litchi, une fraîcheur subtile et désaltérante. Un parfum de rose et de fruits frais, pour une expérience douce et raffinée qui vous enveloppe de douceur à chaque gorgée.</p>
+          <div class="recipe">
+            <span>🍒 50% Litchi</span>
+          </div>
+          <div class="specs">
+            <span><b>33cl</b></span>
+            <span><b>Sans</b> conservateurs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 5: Coco -->
+    <div class="flavor-card" style="--accent: var(--coco); --accent-deep: var(--coco-deep);">
+      <div class="card-vertical-title">COCO</div>
+      <div class="card-watermark">COCO</div>
+
+      <div class="card-particles">
+        <span class="particle" style="width:14px; height:14px; left:20%; top:50%; animation-delay:-1.5s;"></span>
+        <span class="particle" style="width:8px; height:8px; left:75%; top:25%; animation-delay:-3.5s;"></span>
+        <span class="particle" style="width:10px; height:10px; left:65%; top:75%; animation-delay:-5.5s;"></span>
+      </div>
+      <div class="card-visual">
+        <span class="num">05</span>
+        <img src="test5.png" alt="Canette Baïana Coco" class="can-img">
+      </div>
+      <div class="card-content">
+        <div class="card-content-inner">
+          <h3 class="name">Coco</h3>
+          <p class="desc">La douceur pure de l'eau de coco alliée à la rondeur gourmande de sa pulpe. Un instant de sérénité désaltérant qui évoque la fraîcheur lactée et veloutée des plus belles plages de sable blanc.</p>
+          <div class="recipe">
+            <span>🥥 50% Coco</span>
+          </div>
+          <div class="specs">
+            <span><b>33cl</b></span>
+            <span><b>Sans</b> conservateurs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMESSE -->
+<section class="promesse" id="promesse">
+  <div class="eyebrow">Notre promesse</div>
+  <h2 data-lines><span class="ln">Le fruit, gorgé de soleil.</span><span class="ln"><em>Et absolument rien d'autre.</em></span></h2>
+  <div class="pills" data-reveal>
+    <span><b>Sans</b> conservateurs</span>
+    <span><b>100%</b> goût</span>
+    <span><b>Origine</b> tropicale</span>
+  </div>
+</section>
+
+<!-- ESPRIT -->
+<section class="esprit" id="esprit">
+  <div class="esprit-grid">
+    <div class="esprit-figs">
+      <figure class="f1"><img src="assets/verticale.png" alt="Ambiance tropicale Baïana"></figure>
+    </div>
+    <div class="esprit-copy">
+      <div class="eyebrow" data-reveal>L'esprit Baïana</div>
+      <h2 data-reveal>Le soleil,<br><em>mis en canette.</em></h2>
+      <p data-reveal>Baïana, c'est une parenthèse tropicale. La joie d'une plage au petit matin, la couleur franche d'un fruit mûr, la fraîcheur qui claque.</p>
+      <p data-reveal>Une marque solaire, sincère et vivante — née de l'envie de mettre un peu de chaleur dans chaque gorgée.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-container">
+    <div class="eyebrow" data-reveal>FAQ</div>
+    <h2 data-reveal>Questions fréquentes</h2>
+    <div class="faq-list">
+      <div class="faq-item" data-reveal>
+        <button class="faq-trigger">
+          <span>Où sont fabriquées les boissons Baïana ?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-content">
+          <p>Nos boissons sont composées exclusivement de fruits tropicaux de première qualité cueillis à parfaite maturité. La mise en canette est réalisée selon des procédés rigoureux pour préserver l'intensité aromatique et la fraîcheur naturelle des nectars.</p>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-trigger">
+          <span>Quelle est la teneur en sucre de Baïana ?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-content">
+          <p>Zéro sucre ajouté ! La douceur rafraîchissante de nos sodas provient exclusivement du fructose naturellement présent dans les fruits pressés. C'est l'alternative idéale aux sodas industriels pour un plaisir sain, pur et désaltérant.</p>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-trigger">
+          <span>Vos boissons conviennent-elles aux enfants ?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-content">
+          <p>Absolument. Nos boissons sont 100% naturelles, sans aucun conservateur, sans colorant artificiel et naturellement sans caféine. Elles conviennent parfaitement pour un goûter fruité et équilibré.</p>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-trigger">
+          <span>Vos canettes sont-elles recyclables ?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-content">
+          <p>Oui, toutes nos canettes sont en aluminium recyclable à l'infini. Nous privilégions ce format léger et éco-responsable pour minimiser notre empreinte carbone et encourager l'économie circulaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-top" style="align-items: center;">
+    <a class="logo" href="#top" id="footLogo" aria-label="Baïana Fruitz"><img src="Logo BLEU.png" alt="Baïana Fruitz"></a>
+    <div class="foot-right" style="max-width: 400px;">
+      <p class="tagline" style="margin-bottom: 8px;">Le goût du soleil, en canette.</p>
+      <p style="font-size: 12px; opacity: 0.65; line-height: 1.5;">Marque opérée et distribuée par <strong>Procom International</strong>.<br>Siège social : 472 rue Marius Petipa, 34070 Montpellier, France.</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Baïana Fruitz. Tous droits réservés.</span>
+    <nav><a href="#cguModal" id="cguLink">CGU & Mentions légales</a><a href="mailto:commercial@procom-international.fr">Contact</a><a href="#">Instagram</a></nav>
+  </div>
+</footer>
+
+<!-- CGU & MENTIONS LEGALES MODAL -->
+<div class="modal" id="cguModal" aria-hidden="true" style="display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; padding: 20px; background: rgba(14, 37, 44, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0;">
+  <div class="modal-content" style="background: var(--sand); color: var(--ink); max-width: 600px; width: 100%; max-height: 80vh; overflow-y: auto; padding: clamp(24px, 5vw, 40px); border-radius: 24px; box-shadow: 0 20px 50px rgba(14, 37, 44, 0.15); position: relative; border: 1px solid rgba(255, 255, 255, 0.6); transform: translateY(30px) scale(0.95);">
+    <button class="modal-close" id="closeCgu" style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--ink); opacity: 0.6; transition: opacity 0.2s;" aria-label="Fermer la fenêtre">&times;</button>
+    <h2 style="font-family: var(--display); font-size: clamp(22px, 3vw, 30px); margin-bottom: 24px; font-weight: 900; line-height: 1.1;">CGU & Mentions Légales</h2>
+    <div style="font-size: 14px; line-height: 1.6; display: flex; flex-direction: column; gap: 16px; opacity: 0.9;">
+      <p><strong>1. Éditeur du site</strong><br>Ce site est édité par la société <strong>Procom International</strong>, opérant et distribuant la marque Baïana Fruitz. Siège social : 472 rue Marius Petipa, 34070 Montpellier, France.</p>
+      <p><strong>2. Données personnelles & Cookies</strong><br>Chez Baïana Fruitz, nous respectons votre vie privée. Ce site est exclusivement informatif : <strong>nous ne collectons aucune donnée personnelle, n'utilisons aucun cookie de traçage ou publicitaire, et ne vendons aucune information.</strong> Vous pouvez naviguer en toute tranquillité.</p>
+      <p><strong>3. Propriété intellectuelle</strong><br>La marque Baïana Fruitz ainsi que l'ensemble des logos, visuels, textes et éléments graphiques de ce site sont la propriété exclusive de Procom International. Toute reproduction est interdite sans autorisation préalable.</p>
+      <p><strong>4. Utilisation du site</strong><br>L'utilisation du site est réservée à un usage personnel. Nous nous efforçons de maintenir des informations exactes et à jour, mais nous déclinons toute responsabilité en cas d'erreur ou d'interruption temporaire du site.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+<script>
+if('scrollRestoration' in history) history.scrollRestoration='manual';
+
+/* ---- animations ---- */
+gsap.registerPlugin(ScrollTrigger);
+
+// hero intro (run immediately — script is at body end, DOM ready)
+gsap.timeline({defaults:{ease:'expo.out'}})
+  .from('.nav',{y:-30,opacity:0,duration:.9})
+  .from('.hero-title .ln',{yPercent:118,duration:1.25},'-=.6');
+
+// hero parallax
+gsap.to('.hero-bg',{yPercent:8,ease:'none',
+  scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+// floating light motes
+const hero=document.querySelector('.hero');
+for(let i=0;i<14;i++){
+  const m=document.createElement('span');m.className='mote';
+  const s=6+Math.random()*22;
+  Object.assign(m.style,{width:s+'px',height:s+'px',left:Math.random()*100+'%',top:(40+Math.random()*60)+'%'});
+  hero.appendChild(m);
+  gsap.to(m,{y:-(120+Math.random()*220),x:(Math.random()-.5)*120,opacity:0,duration:5+Math.random()*6,
+    repeat:-1,delay:Math.random()*6,ease:'sine.out',
+    onRepeat(){gsap.set(m,{opacity:.7})}});
+  gsap.set(m,{opacity:.6});
+}
+
+// nav solid on scroll
+ScrollTrigger.create({start:'top -80',onUpdate:s=>nav.classList.toggle('solid',s.scroll()>80),onToggle:()=>{}});
+ScrollTrigger.create({trigger:'.hero',start:'bottom 90%',
+  onEnter:()=>nav.classList.add('solid'),onLeaveBack:()=>nav.classList.remove('solid')});
+
+// generic reveals
+gsap.utils.toArray('[data-reveal]').forEach(el=>{
+  gsap.from(el,{y:46,opacity:0,duration:1,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 82%'}});
+});
+// manifesto title color animation on scroll (turquoise to fuchsia)
+gsap.fromTo('.mani-title', 
+  { color: '#00D0F5' },
+  {
+    color: '#E6007E',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.manifesto',
+      start: 'top 75%',
+      end: 'bottom 25%',
+      scrub: true
+    }
+  }
+);
+
+// promesse scroll-driven lines animation
+const promesseHeader = document.querySelector('.promesse h2');
+if (promesseHeader) {
+  const line1 = promesseHeader.querySelectorAll('.ln')[0];
+  const line2 = promesseHeader.querySelectorAll('.ln')[1];
+  
+  if (line1 && line2) {
+    gsap.fromTo(line1, 
+      { xPercent: 100, opacity: 0.2 }, 
+      { 
+        xPercent: 0, 
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.promesse h2',
+          start: 'top bottom',
+          end: 'center center',
+          scrub: true
+        }
+      }
+    );
+
+    gsap.fromTo(line2, 
+      { xPercent: -100, opacity: 0.2 }, 
+      { 
+        xPercent: 0, 
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.promesse h2',
+          start: 'top bottom',
+          end: 'center center',
+          scrub: true
+        }
+      }
+    );
+  }
+}
+
+// esprit image parallax
+gsap.utils.toArray('[data-par]').forEach(img=>{
+  gsap.fromTo(img,{yPercent:parseFloat(img.dataset.par)*-.5},{yPercent:parseFloat(img.dataset.par)*.5,ease:'none',
+    scrollTrigger:{trigger:img.closest('.esprit-figs'),start:'top bottom',end:'bottom top',scrub:true}});
+});
+
+// FLAVORS Reveal on Scroll
+gsap.from('.flavors-grid', {
+  y: 40,
+  opacity: 0,
+  duration: 1,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.flavors',
+    start: 'top 80%'
+  }
+});
+
+// CGU Modal logic with GSAP animations
+const cguModal = document.getElementById('cguModal');
+const cguLink = document.getElementById('cguLink');
+const closeCgu = document.getElementById('closeCgu');
+const cguContent = cguModal.querySelector('.modal-content');
+
+cguLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  cguModal.style.display = 'flex';
+  cguModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  gsap.fromTo(cguModal, {opacity: 0}, {opacity: 1, duration: 0.35, ease: 'power2.out'});
+  gsap.fromTo(cguContent, {y: 40, scale: 0.93}, {y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.5)'});
+});
+
+const closeCguModalFunc = () => {
+  document.body.style.overflow = '';
+  gsap.to(cguModal, {opacity: 0, duration: 0.25, ease: 'power2.in', onComplete: () => {
+    cguModal.style.display = 'none';
+    cguModal.setAttribute('aria-hidden', 'true');
+  }});
+  gsap.to(cguContent, {y: 20, scale: 0.95, duration: 0.25, ease: 'power2.in'});
+};
+
+closeCgu.addEventListener('click', closeCguModalFunc);
+cguModal.addEventListener('click', (e) => {
+  if (e.target === cguModal) closeCguModalFunc();
+});
+
+// Close all modals on Escape key press
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (cguModal.style.display === 'flex') closeCguModalFunc();
+  }
+});
+
+// Lock accordion card on click (Desktop)
+const cards = document.querySelectorAll('.flavor-card');
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    if (window.innerWidth >= 768) {
+      const isLocked = card.classList.contains('locked');
+      cards.forEach(c => c.classList.remove('locked'));
+      if (!isLocked) {
+        card.classList.add('locked');
+      }
+    }
+  });
+});
+
+
+// FAQ Accordion Animations
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const trigger = item.querySelector('.faq-trigger');
+  const content = item.querySelector('.faq-content');
+  
+  trigger.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    
+    // Close all other items
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item && otherItem.classList.contains('active')) {
+        otherItem.classList.remove('active');
+        const otherContent = otherItem.querySelector('.faq-content');
+        gsap.to(otherContent, { height: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    });
+    
+    // Toggle current item
+    if (isActive) {
+      item.classList.remove('active');
+      gsap.to(content, { height: 0, duration: 0.4, ease: 'power2.out' });
+    } else {
+      item.classList.add('active');
+      // Set height dynamically
+      gsap.set(content, { height: 'auto' });
+      const fullHeight = content.offsetHeight;
+      gsap.fromTo(content, { height: 0 }, { height: fullHeight, duration: 0.4, ease: 'power2.out' });
+    }
+  });
+});
+
+// Lenis Smooth Scroll
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
+
+// Update ScrollTrigger on scroll
+lenis.on('scroll', ScrollTrigger.update);
+
+// Link Lenis to GSAP ticker
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
+// Lenis Anchor Scrolling Support
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    if (href === '#top') {
+      lenis.scrollTo(0);
+    } else {
+      const target = document.querySelector(href);
+      if (target) {
+        lenis.scrollTo(target);
+      }
+    }
+  });
+});
+
+// Preloader Progress & Loading Hide
+window.addEventListener('load', () => {
+  const progress = document.querySelector('.preloader-progress');
+  const preloader = document.getElementById('preloader');
+  if (progress && preloader) {
+    progress.style.width = '100%';
+    setTimeout(() => {
+      preloader.classList.add('loaded');
+    }, 400);
+  }
+});
+
+// Preloader Fallback Timeout (max 3 seconds)
+setTimeout(() => {
+  const preloader = document.getElementById('preloader');
+  if (preloader && !preloader.classList.contains('loaded')) {
+    preloader.classList.add('loaded');
+  }
+}, 3000);
+
+// 3D can hover tilt animations for desktop
+const canCards = document.querySelectorAll('.flavor-card');
+canCards.forEach(card => {
+  const img = card.querySelector('.can-img');
+  if (!img) return;
+  
+  card.addEventListener('mousemove', (e) => {
+    if (window.innerWidth < 768) return; // Desktop only
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    // Degrees of rotation
+    const tiltX = (y / (rect.height / 2)) * -8;
+    const tiltY = (x / (rect.width / 2)) * 8;
+    
+    // Slide offset (parallax movement)
+    const moveX = (x / (rect.width / 2)) * 12;
+    const moveY = (y / (rect.height / 2)) * 12;
+    
+    gsap.to(img, {
+      rotateX: tiltX,
+      rotateY: tiltY,
+      x: moveX,
+      y: moveY,
+      scale: 1.15,
+      duration: 0.4,
+      ease: "power2.out",
+      overwrite: "auto"
+    });
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    gsap.to(img, {
+      rotateX: 0,
+      rotateY: 0,
+      x: 0,
+      y: 0,
+      scale: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      overwrite: "auto"
+    });
+  });
+});
+</script>
+</body>
+</html>
